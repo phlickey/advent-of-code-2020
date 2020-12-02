@@ -6,14 +6,6 @@ const rows = text.split("\n");
 
 const validatePassword = ({ password, letter, min, max }) => {
   const count = password.split("").filter((char) => char === letter).length;
-  console.log({
-    count,
-    min,
-    max,
-    password,
-    letter,
-    valid: count >= min && count <= max,
-  });
   return count >= min && count <= max;
 };
 
@@ -21,17 +13,6 @@ const newValidatePassword = ({ password, letter, min, max }) => {
   const chars = password.split("");
   const minChar = chars[min - 1];
   const maxChar = chars[max - 1];
-  console.log({
-    password,
-    passwordLength: chars.length,
-    min,
-    minChar,
-    max,
-    maxChar,
-    letter,
-    lettersTheSame: minChar === maxChar,
-    oneLetterMatches: maxChar === letter || minChar === letter,
-  });
   if (minChar === maxChar) return false;
   return maxChar === letter || minChar === letter;
 };
