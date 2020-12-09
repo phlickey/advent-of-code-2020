@@ -24,7 +24,10 @@ const validPassports = passportMaps.filter((passport) => {
   let isValid = true;
   const passportKeys = Object.keys(passport);
   for (let requiredKey of requiredKeys) {
-    isValid = isValid && passportKeys.includes(requiredKey);
+    isValid =
+      isValid &&
+      passportKeys.includes(requiredKey) &&
+      validations[requiredKey](passport);
   }
   return isValid;
 });
