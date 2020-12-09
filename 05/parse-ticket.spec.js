@@ -1,5 +1,4 @@
-// @ts-nocheck
-const { expect } = require("@jest/globals");
+const { describe, expect, it } = require("@jest/globals");
 const { parseTicket } = require("./parse-ticket");
 
 describe("ticket parser", () => {
